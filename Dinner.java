@@ -1,3 +1,5 @@
+package diningChanges;
+
 import java.util.Scanner;
 
 public class Dinner {

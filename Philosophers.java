@@ -1,25 +1,27 @@
+package diningChanges;
+
 class Philosophers implements Runnable {
 
   private final Object leftChopstic;
   private final Object rightChopstic;
-  String action = "";
+  String philosopherAction = "";
   int timetaken;
-  private static final int timeMultiplier = 100;
+  private static final int timeMultiplierInSeconds = 100;
 
   public Philosophers(Object leftChopstic, Object rightChopstic) {
     this.leftChopstic = leftChopstic;
     this.rightChopstic = rightChopstic;
   }
 
-  private void startDoing(String action) throws InterruptedException {
-    timetaken = ((int) (Math.random() * timeMultiplier));
+  private void startDoing(String philosopherAction) throws InterruptedException {
+    timetaken = ((int) (Math.random() * timeMultiplierInSeconds));
 
-    System.out.println(Thread.currentThread().getName() + " is " + action);
+    System.out.println(Thread.currentThread().getName() + " is " + philosopherAction);
     Thread.sleep(timetaken);
   }
 
   private void startEat() throws InterruptedException {
-    System.out.println(Thread.currentThread().getName() + " is Eating for time " + timetaken + "\n\n");
+    System.out.println(Thread.currentThread().getName() + " is Eating for time " + timetaken + " ms\n\n");
     Thread.sleep(timetaken);
   }
 
